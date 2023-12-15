@@ -20,6 +20,11 @@ class Database {
       .then(() => console.log("Connected to mongoose"))
       .catch((err) => console.log(err));
   }
+
+  _setupDatabase() {
+    // Message setting database
+    console.log("Setting up the database...");
+  }
 }
 
 class App extends Database {
@@ -29,6 +34,12 @@ class App extends Database {
     this._setupMiddlewares(); // Set up Express middleware
     this._setupRoutes(); // Set up Express routing
     this._startServer(); // Start Express server
+  }
+
+  _setupDatabase() {
+    // Override the method in the parent class
+    // Setting up the database in the App class
+    console.log("Setting up the database for the app...");
   }
 
   _setupMiddlewares() {
